@@ -1,20 +1,26 @@
-import React,{useState} from 'react'
+import axios from 'axios'
+import React, {useState, useEffect} from 'react'
 
 const Tutorial = () => {
-  const titles = [
-    {id:1, title:"TITLE1"},
-    {id:2, title:"TITLE2"},
-    {id:3, title:"TITLE3"},
 
-  ]
   const [title, setTitle] = useState("")
+  const [titlelist, setTitlelist] = useState([])
 
+  useEffect(()=>{
+    axios.get('http://localhost:8080/api/get')
+    .then((response)=>{
 
+      setTitlelist(response.data)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+  })
+  
 
   return (
     <div>
       <div className='row leftDiv'>
-        
         <div className='col-sm-5'>
 
         <div className='input-group mb-3'>
@@ -41,12 +47,12 @@ const Tutorial = () => {
                 </tr>
               </thead>
 
-              <tbody>
-                {titles.map((title)=>{
-                  <tr>
-                    <td key={title.id}> {title.title} </td>
-                  </tr>
-                })}
+              <tbody className='text-center'>
+              {titlelist.map((val)=>{
+                return <tr>
+                  <td><h3>{val.title}</h3></td>
+                </tr>
+              })}
               </tbody>
             </table>
           </div>
@@ -54,8 +60,15 @@ const Tutorial = () => {
           
       </div>
 
-        <div className='col-sm-5'>
-          Click a Tutorial
+        <div className='col-sm-5 ShowMovie'>
+          <div className='card'>
+            <div className='card-header'>
+              Click a Tutorial
+            </div>
+            <div className='card-body'>
+              BODY
+            </div>
+          </div>
         </div>
       </div>
     </div>

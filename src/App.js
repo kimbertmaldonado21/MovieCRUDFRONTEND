@@ -28,27 +28,27 @@ function App() {
 
   return (
     <div className="App">
-        <div className={navClass? "Navigation responsive" : "Navigation "}>
-          <div className="Title">
-            TITLE
-            
-          </div>
-          <div className="Action">
-              <a className="Link" href="#" onClick={()=>{setData("tutorials")}}>Tutorials</a>
-              <a className="Link" href="#" onClick={()=>{setData("add")}}>Add Tutorials</a>
+        {/* <div className={navClass? "Navigation responsive" : "Navigation "}>
+          TITLE 
+            <a className="Link" href="#" onClick={()=>{setData("tutorials")}}>Tutorials</a>
+            <a className="Link" href="#" onClick={()=>{setData("add")}}>Add Tutorials</a>
 
-              <button class="btn" type='submit' onClick={setClass}>
+            <button className="btn" type='submit' onClick={setClass}>
+              <ion-icon name="menu-outline"></ion-icon>
+            </button>
+        </div> */}
+        <div className={navClass? "topnav responsive" : "topnav"} id="myTopnav">
+            <a className="Link" href="#" onClick={()=>{setData("tutorials")}}>Tutorials</a>
+            <a className="Link" href="#" onClick={()=>{setData("add")}}>Add Tutorials</a>
+            <button className="btn" type='submit' onClick={setClass}>
                 <ion-icon name="menu-outline"></ion-icon>
-              </button>
- 
-              
-          </div>
+            </button>
         </div>
-        {/* end of navigation */}
+
 
         
         <div className="Content">
-          {navClass? "Navigation responsive" : "Navigation "}
+          {/* {navClass? "Navigation responsive" : "Navigation "} */}
           {setBody()}
 
         </div>
