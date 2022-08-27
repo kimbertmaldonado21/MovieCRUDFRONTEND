@@ -100,7 +100,8 @@ body{
 
         // Add.js
         .leftDiv{
-            justify-content: space-between;
+            display: flex;
+            justify-content: center;
             // background-color: black;
         }
         .Tutorial_list{

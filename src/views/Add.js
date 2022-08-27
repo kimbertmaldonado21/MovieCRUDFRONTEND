@@ -85,16 +85,6 @@ const Add = () => {
                   ADD
                 </button>
               </div>
-              <div className='col-4'>
-                <button className='btn btn-danger'>
-                  DELETE
-                </button>
-              </div>
-              <div className='col-4'>
-                <button className='btn btn-warning'>
-                  UPDATE
-                </button>
-              </div>
             </div>
 
           </div>
